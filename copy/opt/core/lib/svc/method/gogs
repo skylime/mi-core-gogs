@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PATH=/opt/local/bin:${PATH}
+/opt/gogs/gogs web &
