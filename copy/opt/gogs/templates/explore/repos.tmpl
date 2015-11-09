@@ -1,0 +1,49 @@
+{{template "base/head" .}}
+<div class="explore repositories">
+	<div class="ui container">
+		<div class="ui grid">
+			{{template "explore/navbar" .}}
+			<div class="twelve wide column content">
+				<div class="ui repository list">
+					{{range $i, $v := .Repos}}
+					<div class="item">
+						<div class="ui header">
+							<a href="{{AppSubUrl}}/{{.Owner.Name}}/{{.Name}}">{{.Owner.Name}} / {{.Name}}</a>
+
+							<div class="ui right metas">
+								<span class="text grey"><i class="octicon octicon-star"></i> {{.NumStars}}</span>
+								<span class="text grey"><i class="octicon octicon-git-branch"></i> {{.NumForks}}</span>
+							</div>
+						</div>
+						{{if .Description}}<p>{{.Description}}</p>{{end}}
+						<p class="time">{{$.i18n.Tr "org.repo_updated"}} {{TimeSince .Updated $.i18n.Lang}}</p>
+					</div>
+					{{end}}
+				</div>
+
+				{{with .Page}}
+				{{if gt .TotalPages 1}}
+				<div class="center page buttons">
+					<div class="ui borderless pagination menu">
+					  <a class="{{if not .HasPrevious}}disabled{{end}} item" {{if .HasPrevious}}href="{{$.Link}}?page={{.Previous}}"{{end}}>
+					    <i class="left arrow icon"></i> {{$.i18n.Tr "repo.issues.previous"}}
+					  </a>
+						{{range .Pages}}
+						{{if eq .Num -1}}
+						<a class="disabled item">...</a>
+						{{else}}
+						<a class="{{if .IsCurrent}}active{{end}} item" {{if not .IsCurrent}}href="{{$.Link}}?page={{.Num}}"{{end}}>{{.Num}}</a>
+						{{end}}
+						{{end}}
+					  <a class="{{if not .HasNext}}disabled{{end}} item" {{if .HasNext}}href="{{$.Link}}?page={{.Next}}"{{end}}>
+					    {{$.i18n.Tr "repo.issues.next"}} <i class="icon right arrow"></i>
+					  </a>
+					</div>
+				</div>
+				{{end}}
+				{{end}}
+			</div>
+		</div>
+	</div>
+</div>
+{{template "base/footer" .}}
