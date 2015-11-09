@@ -19,8 +19,11 @@ echo "* Create gogs log folder"
 mkdir -p /var/log/gogs
 
 echo "* Create gogs user and permissions"
-useradd -m -c "Gogs - Go Git Service" -d /opt/gogs git
+useradd -m -c "Gogs - Go Git Service" -s /opt/local/bin/bash -d /opt/gogs git
 chown -R gogs:other /opt/gogs
+
+echo "* Create ssl folder for nginx"
+mkdir /opt/local/etc/nginx/ssl
 
 echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}

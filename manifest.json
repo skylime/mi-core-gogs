@@ -1,0 +1,19 @@
+{
+	"name":         "core-gogs",
+	"version":      "15.1.0",
+	"description":  "core.io Gogs - Go Git Service",
+	"organization": "SkyLime",
+	"brand":        "Instance",
+	"homepage":     "https://github.com/skylime/mi-core-gogs",
+	"base":         "156cac3d-2d48-489e-b12c-5ff493bffe2d",
+	"minram":       512,
+	"customer_metadata": {
+		"root_authorized_keys": {"type": "text", "description": "SSH public key(s) for the root user"},
+		"syslog_host":          {"type": "text", "description": "syslog server IP address and port seperated by colon"},
+		"mail_smarthost":       {"type": "text", "description": "hostname of remote smtp server"},
+		"mail_auth_user":       {"type": "text", "description": "smtp username if authentication is required"},
+		"mail_auth_pass":       {"type": "text", "description": "smtp password"},
+		"mail_adminaddr":       {"type": "text", "description": "admin email address alias for all mails to root@localhost"},
+		"nginx_ssl":            {"type": "text", "description": "ssl cert, key and CA for imaps and pop3s in pem format"},
+	}
+}
