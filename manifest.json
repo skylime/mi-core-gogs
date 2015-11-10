@@ -14,6 +14,6 @@
 		"mail_auth_user":       {"type": "text", "description": "smtp username if authentication is required"},
 		"mail_auth_pass":       {"type": "text", "description": "smtp password"},
 		"mail_adminaddr":       {"type": "text", "description": "admin email address alias for all mails to root@localhost"},
-		"nginx_ssl":            {"type": "text", "description": "ssl cert, key and CA for imaps and pop3s in pem format"},
+		"nginx_ssl":            {"type": "text", "description": "ssl cert, key and CA for imaps and pop3s in pem format"}
 	}
 }

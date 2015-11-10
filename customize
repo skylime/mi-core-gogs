@@ -5,6 +5,8 @@
 # Custom versions and variables
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
+GOGS_VERSION=20151110043405
+
 # Munin plugins
 MUNIN_PLUGINS="
 nginx
@@ -15,8 +17,8 @@ set -o errexit
 
 echo "* Configuring image specific packages.";
 
-echo "* Create gogs log folder"
-mkdir -p /var/log/gogs
+echo "* Download and unzip gogs"
+curl http://tmp.cyber-tec.org/dev/gogs.${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
 
 echo "* Create gogs user and permissions"
 useradd -m -c "Gogs - Go Git Service" -s /opt/local/bin/bash -d /opt/gogs git
