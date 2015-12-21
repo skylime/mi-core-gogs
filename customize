@@ -20,7 +20,7 @@ mkdir -p /var/log/gogs
 
 echo "* Create gogs user and permissions"
 useradd -m -c "Gogs - Go Git Service" -s /opt/local/bin/bash -d /opt/gogs git
-chown -R gogs:other /opt/gogs
+chown -R git:other /opt/gogs
 
 echo "* Create ssl folder for nginx"
 mkdir /opt/local/etc/nginx/ssl
