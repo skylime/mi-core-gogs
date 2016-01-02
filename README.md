@@ -4,7 +4,9 @@ This repository is based on [Joyent mibe](https://github.com/joyent/mibe). Pleas
 
 ## description
 
-Minimal mibe image for [Gogs - Go Git Service](http://gogs.io). It contains some workarounds because at the moment the image contains the binary of `gogs`.
+Minimal mibe image for [Gogs - Go Git Service](http://gogs.io). It's required to
+finish the installation via web interface and follow the steps of the
+installer.
 
 ### build gogs for the mibe image
 
@@ -23,13 +25,16 @@ Get and build gogs binary:
 
 	go get -u -tags "sqlite tidb redis memcache pam cert" github.com/gogits/gogs
 	cd ${GOPATH}/src/github.com/gogits/gogs
-	go build -tags "sqlite redis pam cert"
 
-Copy required files into the mibe image to be deployed:
+Use the official `Makefile` to create an release:
 
-	export DEST="mi-core-gogs/copy/opt/gogs/"
-	mkdir -p ${DEST}
-	cp -a ${GOPATH}/src/github.com/gogits/gogs/{gogs,conf,public,templates} ${DEST}
+	make release TAGS="sqlite redis memcache pam cert"
+
+You find an `release/gogs.${NOW}.zip` file now. Because it's much more awesome
+to use a `tar.gz` file I also build an additional file:
+
+	cd release && \
+		tar cfz $(ls *.zip | sed 's:.zip::g' | tail -n1).tar.gz gogs/
 
 ## mdata variables
 
