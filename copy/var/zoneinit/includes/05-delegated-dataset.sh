@@ -12,6 +12,11 @@ if zfs list ${DDS} 1>/dev/null 2>&1; then
 	zfs set mountpoint=/opt/gogs/gogs-repositories ${DDS}/gogs-repositories
 fi
 
+# update permissions for git usage
+chown git:other /opt/gogs/custom
+chown git:other /opt/gogs/data
+chown git:other /opt/gogs/gogs-repositories
+
 # znapzend for backup
 znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
 	SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}/gogs-custom
