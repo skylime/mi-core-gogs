@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Start gogs service in background
 
 export PATH=/opt/local/bin:${PATH}
 /opt/gogs/gogs web &
