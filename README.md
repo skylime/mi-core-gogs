@@ -34,7 +34,7 @@ You find an `release/gogs.${NOW}.zip` file now. Because it's much more awesome
 to use a `tar.gz` file I also build an additional file:
 
 	cd release && \
-		tar cfz $(ls *.zip | sed 's:.zip::g' | tail -n1).tar.gz gogs/
+		tar cfz $(ls *.zip | sed 's:.zip::g' | tail -n1).tar.gz gogs
 
 ## mdata variables
 
