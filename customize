@@ -21,9 +21,16 @@ echo "* Download and unzip gogs"
 mkdir /opt/gogs
 curl http://tmp.cyber-tec.org/dev/gogs.${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
 
-echo "* Create gogs user and permissions"
+echo "* Create gogs user"
 useradd -m -s /usr/bin/bash -c "Gogs - Go Git Service" -d /opt/gogs git
 passwd -u git
+
+echo "* Fix PATH for ssh environment"
+mkdir -p /opt/gogs/.ssh
+echo "PATH=/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin" > \
+	/opt/gogs/.ssh/environment
+
+echo "* Fix gogs home permissions"
 chown -R git:other /opt/gogs
 
 echo "* Create ssl folder for nginx"
