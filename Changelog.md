@@ -1,5 +1,12 @@
 # Changelog
 
+## 15.3.1
+
+### Fix
+
+* Fix permissions for GOGS home and also deploy config for default env. [Thomas Merkel]
+* Unlock user and modify default shell to bash. [Thomas Merkel]
+
 ## 15.3.0
 
 ### Changes
