@@ -22,7 +22,8 @@ mkdir /opt/gogs
 curl http://tmp.cyber-tec.org/dev/gogs.${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
 
 echo "* Create gogs user and permissions"
-useradd -m -c "Gogs - Go Git Service" -d /opt/gogs git
+useradd -m -s /usr/bin/bash -c "Gogs - Go Git Service" -d /opt/gogs git
+passwd -u git
 chown -R git:other /opt/gogs
 
 echo "* Create ssl folder for nginx"
