@@ -1,6 +1,6 @@
 # Enable nginx and configure ssl support
 
-host=$(mdata-get sdc:hostname)
+host=$(hostname)
 cert_dir='/opt/local/etc/nginx/ssl/'
 
 # Configure nginx ssl certificate and authentication
