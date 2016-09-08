@@ -26,6 +26,11 @@ Get and build gogs binary:
 	go get -u -tags "sqlite tidb redis memcache pam cert" github.com/gogits/gogs
 	cd ${GOPATH}/src/github.com/gogits/gogs
 
+Maybe you need to fix the `LDFLAGS` on SmartOS because of the stack smashing
+protector if you use sqlite:
+
+	LDFLAGS += -extldflags "-lssp" ...
+
 Use the official `Makefile` to create an release:
 
 	make release TAGS="sqlite redis memcache pam cert"
