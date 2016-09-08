@@ -1,5 +1,15 @@
 # Changelog
 
+## 16.2.0
+
+### New
+
+* Version Bump to newest Gogs version 20160908021429. [Thomas Merkel]
+
+	Base image update to core-base 16.2.0, fixing hostname issue if you
+	don&#x27;t setup a hostname for the zone. Work without delegate dataset as
+	well.
+
 ## 15.3.1
 
 ### Fix
