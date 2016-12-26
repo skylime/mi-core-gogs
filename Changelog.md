@@ -1,5 +1,18 @@
 # Changelog
 
+## 16.3.0
+
+### New
+
+* Update to the newest gogs version v0.9.113 and core-base image. [Thomas
+  Merkel]
+
+### Fix
+
+* Remove Redis because we don&#x27;t use it in our mibe image. [Thomas Merkel]
+* Fix readme for ssp. [Thomas Merkel]
+
+
 ## 16.2.0
 
 ### New
