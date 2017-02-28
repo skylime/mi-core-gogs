@@ -39,9 +39,10 @@ mkdir /opt/local/etc/nginx/ssl
 echo "* Activate munin plugins"
 /opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
-# Clean up
-echo "* Cleaning up."
-rm -rf /root/*
+echo "* Cleanup home/admin because of delegate dataset usage"
+rm -rf /home/admin/.[^.]*
 
-# Prepare image for provisioning
+echo "* Cleaning up"
+rm -rf /root/*
 sm-prepare-image -y
+
