@@ -12,9 +12,10 @@ installer.
 
 Please notice this documentation is a minimal copy of the original documentation from [How to build gogs from source](http://gogs.io/docs/installation/install_from_source).
 
-Install go first:
+Install go and build requirements first:
 
-	pkgin install go
+	pkgin install go build-essential git zip nodejs zip
+	npm install -g less
 
 Create a go working directory:
 
@@ -29,7 +30,12 @@ Get and build gogs binary:
 Maybe you need to fix the `LDFLAGS` on SmartOS because of the stack smashing
 protector if you use sqlite:
 
-	LDFLAGS += -extldflags "-lssp" ...
+	LDFLAGS += -extldflags "-lssp"
+
+To make a good release I would recommend modify the `Makefile` again and add the
+following line to have the correct version number in the release archive:
+
+	NOW = $(shell cat templates/.VERSION)
 
 Use the official `Makefile` to create an release:
 
