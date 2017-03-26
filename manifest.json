@@ -5,7 +5,7 @@
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-gogs",
-	"base":         "46b7ed55-0556-4027-9fcf-1b77d7b03b43",
+	"base":         "1963511a-19d8-4646-90b4-09ecfad1d3ac",
 	"minram":       512,
 	"customer_metadata": {
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},

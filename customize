@@ -5,7 +5,7 @@
 # Custom versions and variables
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
-GOGS_VERSION=0.10.0.0227
+GOGS_VERSION=0.10.8.0307
 
 # Munin plugins
 MUNIN_PLUGINS="
