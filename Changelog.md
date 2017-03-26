@@ -1,5 +1,21 @@
 # Changelog
 
+## 16.4.0
+
+### New
+
+* Update Gogs and core-base version. [Thomas Merkel]
+* Let&#x27;s Encrypt support for Gogs / Nginx service. [Thomas Merkel]
+
+### Other
+
+* License update. [Thomas Merkel]
+* Switch to Gogs version 0.10.x. [Thomas Merkel]
+
+  Switch to a new build process and switch to a new release location which supports https for downloading the package.
+
+* Update readme to build gogs. [Thomas Merkel]
+
 ## 16.3.0
 
 ### New
@@ -11,7 +27,6 @@
 
 * Remove Redis because we don&#x27;t use it in our mibe image. [Thomas Merkel]
 * Fix readme for ssp. [Thomas Merkel]
-
 
 ## 16.2.0
 
