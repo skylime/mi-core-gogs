@@ -1,5 +1,11 @@
 # Changelog
 
+## 16.4.1
+
+### Fix
+
+* Fix Let&#x27;s Encrypt ACME URLs. [Thomas Merkel]
+
 ## 16.4.0
 
 ### New
