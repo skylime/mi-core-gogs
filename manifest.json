@@ -1,6 +1,6 @@
 {
 	"name":         "core-gogs",
-	"version":      "16.4.0",
+	"version":      "16.4.1",
 	"description":  "core.io Gogs - Go Git Service",
 	"organization": "SkyLime",
 	"brand":        "Instance",
