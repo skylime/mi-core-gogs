@@ -1,5 +1,15 @@
 # Changelog
 
+## 16.4.2
+
+### New
+
+* Gogs version bump to 0.11.6.0407. [Thomas Merkel]
+
+### Fix
+
+* Fix name in README.md. [Thomas Merkel]
+
 ## 16.4.1
 
 ### Fix
