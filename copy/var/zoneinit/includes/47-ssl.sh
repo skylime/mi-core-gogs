@@ -29,6 +29,7 @@ elif /opt/core/bin/ssl-letsencrypt.sh -t webroot 1>/dev/null; then
 	# Update renew-hook.sh
 	echo '#!/usr/bin/env bash' > ${LE_HOME}renew-hook.sh
 	echo 'svcadm restart svc:/pkgsrc/nginx:default' >> ${LE_HOME}renew-hook.sh
+	rm -f ${SSL_HOME}/nginx.csr ${SSL_HOME}/nginx.pem
 fi
 
 # Always run a restart of the webserver
