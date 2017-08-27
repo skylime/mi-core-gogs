@@ -11,7 +11,7 @@ if zfs list ${DDS} 1>/dev/null 2>&1; then
 	zfs set mountpoint=/opt/gogs/custom ${DDS}/gogs-custom
 	zfs set mountpoint=/opt/gogs/data ${DDS}/gogs-data
 	zfs set mountpoint=/opt/gogs/gogs-repositories ${DDS}/gogs-repositories
-	zfs set mountpoint=/opt/gogs/.ssh
+	zfs set mountpoint=/opt/gogs/.ssh ${DDS}/gogs-ssh
 
 	# znapzend for backup
 	znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
