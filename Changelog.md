@@ -1,5 +1,17 @@
 # Changelog
 
+## 17.2.0
+
+### New
+
+- Version bump to newest Gogs version. [Thomas Merkel]
+- Create delegate dataset for /opt/gogs/.ssh folder. [Thomas Merkel]
+
+### Fix
+
+- Fix unused ssl certificate removal. [Thomas Merkel]
+- Fix delegate dataset ssh folder. [Thomas Merkel]
+
 ## 16.4.2
 
 ### New
