@@ -1,5 +1,11 @@
 # Changelog
 
+## 17.2.1
+
+### Fix
+
+- Fix PermitUserEnvironment for gogs. [Thomas Merkel]
+
 ## 17.2.0
 
 ### New
