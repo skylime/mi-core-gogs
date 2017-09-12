@@ -1,5 +1,12 @@
 # Changelog
 
+## 17.2.2
+
+### Fix
+
+- Switch to latest core-base to fix SSH host key issues. [Thomas Merkel]
+- Use gsed and -i option. [Thomas Merkel]
+
 ## 17.2.1
 
 ### Fix
