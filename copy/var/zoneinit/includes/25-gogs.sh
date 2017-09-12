@@ -3,7 +3,7 @@ echo "PATH=/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sb
 	/opt/gogs/.ssh/environment
 
 # Enable environment configuration for users
-sed -e 's:.*PermitUserEnvironment.*no:PermitUserEnvironment yes:g' \
+gsed -i -e 's:.*PermitUserEnvironment.*no:PermitUserEnvironment yes:g' \
 	/etc/ssh/sshd_config
 
 # Enable gogs service
