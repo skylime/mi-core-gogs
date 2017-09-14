@@ -15,11 +15,7 @@ if zfs list ${DDS} 1>/dev/null 2>&1; then
 
 	# znapzend for backup
 	znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
-		SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}/gogs-custom
-	znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
-		SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}/gogs-data
-	znapzendzetup create --recursive --tsformat='%Y-%m-%d-%H%M%S' --donotask \
-		SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}/gogs-repositories
+		SRC '7day=>8hour,30day=>1day,1year=>1week,10year=>1month' ${DDS}
 	/usr/sbin/svcadm enable svc:/pkgsrc/znapzend:default
 else
 	mkdir /opt/gogs/{custom,data,gogs-repositories,.ssh}
