@@ -6,4 +6,4 @@ description="core.io Gogs - Go Git Service"
 homepage="https://github.com/skylime/mi-core-gogs"
 users="root admin"
 minram=512
-base="59a48140-5a17-411a-9f24-de0f579d4840"
+base="52fcbe50-844c-434d-9e86-738ff299bba1"

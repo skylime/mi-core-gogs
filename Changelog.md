@@ -1,5 +1,12 @@
 # Changelog
 
+## 17.4.0
+
+## New
+
+- Version bump of Gogs and core-base image to 17.4.0. [Thomas Merkel]
+- Use znapzendzetup with recursive on full DDS. [Thomas Merkel]
+
 ## 17.2.2
 
 ### Fix
