@@ -1,9 +1,9 @@
 name="core-gogs"
 organization="SkyLime"
 brand="Instance"
-version="17.2.2"
+version="17.4.0"
 description="core.io Gogs - Go Git Service"
 homepage="https://github.com/skylime/mi-core-gogs"
 users="root admin"
 minram=512
-base="dfc9b6a9-4d46-4f09-a90a-0f3e7b802727"
+base="fed94887-71ce-4d41-a940-c1c5ec26b514"
