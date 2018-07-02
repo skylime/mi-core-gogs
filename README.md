@@ -24,8 +24,8 @@ Create a go working directory:
 
 Get and build gogs binary:
 
-	go get -u -tags "sqlite tidb redis memcache pam cert" github.com/gogits/gogs
-	cd ${GOPATH}/src/github.com/gogits/gogs
+	go get -u -tags "sqlite tidb redis memcache pam cert" github.com/gogs/gogs
+	cd ${GOPATH}/src/github.com/gogs/gogs
 
 Maybe you need to fix the `LDFLAGS` on SmartOS because of the stack smashing
 protector if you use sqlite:
