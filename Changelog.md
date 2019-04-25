@@ -1,8 +1,18 @@
 # Changelog
 
+## 18.4.0
+
+### New
+
+* Core-base and gogs version bump to 0.11.88.0220. [Thomas Merkel]
+
+### Fix
+
+* Fix ssl-generator script path. [Thomas Merkel]
+
 ## 17.4.0
 
-## New
+### New
 
 - Version bump of Gogs and core-base image to 17.4.0. [Thomas Merkel]
 - Use znapzendzetup with recursive on full DDS. [Thomas Merkel]
