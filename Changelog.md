@@ -1,5 +1,18 @@
 # Changelog
 
+## 20.3.0
+
+### New
+
+* Version bump for gogs (0.13+dev) and core-base (20.3.0) [Thomas Merkel]
+
+	- Support for Git LFS
+	- Allow admin to remove observers from the repository
+	- New API endpoint GET /admin/teams/:teamid/members to list members of a team
+	- Assets are now embedded into binary and served from memory by default
+
+	https://github.com/gogs/gogs/blob/main/CHANGELOG.md
+
 ## 18.4.0
 
 ### New
