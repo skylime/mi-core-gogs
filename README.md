@@ -14,7 +14,7 @@ Please notice this documentation is a minimal copy of the original documentation
 
 Install go and build requirements first:
 
-	pkgin install go build-essential git zip nodejs zip
+	pkgin install go build-essential git zip nodejs npm zip
 	npm install -g less
 
 Create a go working directory:
@@ -24,28 +24,24 @@ Create a go working directory:
 
 Get and build gogs binary:
 
-	go get -u -tags "sqlite tidb redis memcache pam cert" github.com/gogs/gogs
-	cd ${GOPATH}/src/github.com/gogs/gogs
-
-Maybe you need to fix the `LDFLAGS` on SmartOS because of the stack smashing
-protector if you use sqlite:
-
-	LDFLAGS += -extldflags "-lssp"
-
-To make a good release I would recommend modify the `Makefile` again and add the
-following line to have the correct version number in the release archive:
-
-	NOW = $(shell cat templates/.VERSION)
+	git clone --depth 1 https://github.com/gogs/gogs.git gogs
+	cd gogs
 
 Use the official `Makefile` to create an release:
 
 	make release TAGS="sqlite redis memcache pam cert"
 
-You find an `release/gogs.${NOW}.zip` file now. Because it's much more awesome
-to use a `tar.gz` file I also build an additional file:
+You find an `release/gogs.${NOW}.zip` file now. But sadly this fill does not
+contains all required information. So we should generate our own release as
+`tar.gz` file:
 
+	cd release/gogs && \
+		cp -r ../../templates . &&
+		cp -r ../../public . 
+	
 	cd release && \
-		tar cfz $(ls *.zip | sed 's:.zip::g' | tail -n1).tar.gz gogs
+		VERSION=$(sed -n 's/.*conf.App.Version = "\(.*\)+.*"/\1-'$(git rev-parse --short HEAD)'/p' ../gogs.go)
+		tar cfz gogs-${VERSION}.tar.gz gogs
 
 ## mdata variables
 

@@ -1,11 +1,11 @@
 {
 	"name":         "core-gogs",
-	"version":      "18.4.0",
+	"version":      "20.3.0",
 	"description":  "core.io Gogs - Go Git Service",
 	"organization": "SkyLime",
 	"brand":        "Instance",
 	"homepage":     "https://github.com/skylime/mi-core-gogs",
-	"base":         "f2e83a3d-c128-4f67-b398-9cb841b2783a",
+	"base":         "e9fc6e77-aed7-4ab0-a92f-bb437bcff1a5",
 	"minram":       512,
 	"customer_metadata": {
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},

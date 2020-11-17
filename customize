@@ -5,7 +5,7 @@
 # Custom versions and variables
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
-GOGS_VERSION=0.11.88.0220
+GOGS_VERSION="0.13.0-afaf6da"
 
 # Munin plugins
 MUNIN_PLUGINS="
@@ -19,7 +19,7 @@ echo "* Configuring image specific packages.";
 
 echo "* Download and unzip gogs"
 mkdir /opt/gogs
-curl https://smartos.skylime.net/extra/gogs/gogs.${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
+curl https://smartos.skylime.net/extra/gogs/gogs-${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
 
 echo "* Create gogs user"
 useradd -s /usr/bin/bash -c "Gogs - Go Git Service" -d /opt/gogs git
