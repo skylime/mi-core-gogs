@@ -5,8 +5,6 @@
 # Custom versions and variables
 PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 
-GOGS_VERSION="0.13.0-afaf6da"
-
 # Munin plugins
 MUNIN_PLUGINS="
 	nginx
@@ -15,24 +13,13 @@ MUNIN_PLUGINS="
 # Exit if any commands fail
 set -o errexit
 
-echo "* Configuring image specific packages.";
-
-echo "* Download and unzip gogs"
-mkdir /opt/gogs
-curl https://smartos.skylime.net/extra/gogs/gogs-${GOGS_VERSION}.tar.gz | gtar xz -C /opt/gogs --strip-components=1
-
-echo "* Create gogs user"
-useradd -s /usr/bin/bash -c "Gogs - Go Git Service" -d /opt/gogs git
-passwd -u git
-
-echo "* Fix gogs home permissions"
-chown -R git:other /opt/gogs
+echo "* Configuring image specific packages."
 
 echo "* Create ssl folder for nginx"
-mkdir /opt/local/etc/nginx/ssl
+mkdir -p /opt/local/etc/nginx/ssl
 
 echo "* Activate munin plugins"
-/opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS}
+/opt/core/bin/munin-node-plugins ${MUNIN_PLUGINS} || true
 
 echo "* Cleanup home/admin because of delegate dataset usage"
 rm -rf /home/admin/.[^.]*

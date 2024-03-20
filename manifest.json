@@ -1,11 +1,11 @@
 {
-	"name":         "core-gogs",
-	"version":      "20.3.0",
-	"description":  "core.io Gogs - Go Git Service",
+	"name":         "core-forgejo",
+	"version":      "23.4.0",
+	"description":  "core.io Forgejo - Small Git Service",
 	"organization": "SkyLime",
 	"brand":        "Instance",
-	"homepage":     "https://github.com/skylime/mi-core-gogs",
-	"base":         "e9fc6e77-aed7-4ab0-a92f-bb437bcff1a5",
+	"homepage":     "https://github.com/skylime/mi-core-forgejo",
+	"base":         "97cc75ec-ba4d-45cd-8966-e53baa0f2d5e",
 	"minram":       512,
 	"customer_metadata": {
 		"root_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the root user"},
